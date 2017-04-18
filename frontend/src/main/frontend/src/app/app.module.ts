@@ -8,13 +8,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductsService } from './products.service'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 import {SourcesService} from "./sources.service";
-import { SourceSelectorComponent } from './source-selector/source-selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductDetailComponent,
-    SourceSelectorComponent
   ],
   imports: [
     BrowserModule,

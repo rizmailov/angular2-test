@@ -1,9 +1,7 @@
 package com.example;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +10,12 @@ import java.util.List;
 @RequestMapping("/api")
 public class ProductsService {
     @RequestMapping(path = "/products", method = RequestMethod.GET)
-    public @ResponseBody List<Product> getProducts() {
-        return Arrays.asList(new Product(12L, "Cocaine"), new Product(13L, "Meth"));
+    public @ResponseBody List<Product> getProducts(@RequestParam("sourceName") String sourceName) {
+        if ("Orange Book".equals(sourceName)) {
+            return Arrays.asList(new Product(12L, "Cocaine"), new Product(13L, "Meth"));
+        } else {
+            return Arrays.asList(new Product(33L, "Panadol"), new Product(44L, "Acyclovir"));
+        }
     }
 
     @RequestMapping(path = "/sources", method = RequestMethod.GET)

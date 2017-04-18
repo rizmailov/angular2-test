@@ -12,8 +12,11 @@ export class ProductsService {
 
   constructor(private http: Http) { }
 
-  getProducts(): Promise<Product[]> {
-    return this.http.get(this.productsUrl)
+  getProducts(sourceName: string): Promise<Product[]> {
+    if (!sourceName) {
+      return null;
+    }
+    return this.http.get(this.productsUrl + '?sourceName=' + sourceName)
                .toPromise()
                .then(response => {
                   console.log('got response!:' + response.json());
