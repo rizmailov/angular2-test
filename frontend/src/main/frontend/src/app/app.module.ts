@@ -4,20 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { DrugDetailComponent } from './drug-detail/drug-detail.component';
-import { DrugsService } from './drugs.service'
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductsService } from './products.service'
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 
 @NgModule({
   declarations: [
     AppComponent,
-    DrugDetailComponent
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BsDropdownModule.forRoot()
   ],
-  providers: [ DrugsService ],
+  providers: [ ProductsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

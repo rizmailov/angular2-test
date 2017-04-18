@@ -1,8 +1,8 @@
-import { Drug } from './drug';
+import { Product } from './product';
 
-export const DRUGS: Drug[] = [
-  { id: 11, name: 'Drug1' },
-  { id: 12, name: 'Drug2' },
-  { id: 13, name: 'Drug3' },
-  { id: 14, name: 'Drug4' },
+export const DRUGS: Product[] = [
+  { id: 11, name: 'Product1' },
+  { id: 12, name: 'Product2' },
+  { id: 13, name: 'Product3' },
+  { id: 14, name: 'Product4' },
 ];

@@ -3,21 +3,21 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Drug } from './drug';
+import { Product } from './product';
 
 @Injectable()
-export class DrugsService {
+export class ProductsService {
 
-  private drugsUrl = '/api/drugs';
+  private productsUrl = '/api/products';
 
   constructor(private http: Http) { }
 
-  getDrugs(): Promise<Drug[]> {
-    return this.http.get(this.drugsUrl)
+  getProducts(): Promise<Product[]> {
+    return this.http.get(this.productsUrl)
                .toPromise()
                .then(response => {
                   console.log('got response!:' + response.json());
-                  return response.json() as Drug[]
+                  return response.json() as Product[]
                })
                .catch(this.handleError);
   }

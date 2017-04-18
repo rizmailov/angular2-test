@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { Drug } from './drug';
-import { DrugsService } from './drugs.service'
+import { Product } from './product';
+import { ProductsService } from './products.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [DrugsService]
+  providers: [ProductsService]
 })
 export class AppComponent implements OnInit {
   title = 'Linker';
-  selectedDrug: Drug;
-  drugs: Drug[];
+  selectedProduct: Product;
+  products: Product[];
 
-  constructor(private drugsService: DrugsService) {}
+  constructor(private productsService: ProductsService) {}
 
-  onSelect(drug: Drug): void {
-    this.selectedDrug = drug;
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
   }
 
-  getDrugs(): void {
-    this.drugsService.getDrugs().then(drugs => this.drugs = drugs);
+  getProducts(): void {
+    this.productsService.getProducts().then(products => this.products = products);
   }
 
   ngOnInit(): void {
-    this.getDrugs();
+    this.getProducts();
   }
 }
