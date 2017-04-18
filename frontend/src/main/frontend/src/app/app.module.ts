@@ -7,11 +7,14 @@ import { AppComponent } from './app.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductsService } from './products.service'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
+import {SourcesService} from "./sources.service";
+import { SourceSelectorComponent } from './source-selector/source-selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SourceSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
     HttpModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [ ProductsService ],
+  providers: [ ProductsService, SourcesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

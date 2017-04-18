@@ -9,7 +9,6 @@ import { ProductsService } from './products.service'
   providers: [ProductsService]
 })
 export class AppComponent implements OnInit {
-  title = 'Linker';
   selectedProduct: Product;
   products: Product[];
 
