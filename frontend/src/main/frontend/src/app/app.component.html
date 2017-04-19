@@ -9,11 +9,4 @@
     </li>
   </ul>
 </div>
-
-<ul class="products">
-  <li *ngFor="let product of products" (click)="onProductSelect(product)"
-      [class.selected]="product === selectedProduct">
-    <span>{{product.id}}</span> {{product.name}}
-  </li>
-</ul>
-<product-detail [product]="selectedProduct"></product-detail>
+<products-list *ngIf="selectedSource" [source]="selectedSource"></products-list>
